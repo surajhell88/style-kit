@@ -1,0 +1,23 @@
+{
+  "name": "style-kit",
+  "version": "1.0.0",
+  "description": "Ideal for Teams to share and maintain code standards across levels",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-app": "http-server -op 8282"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surajhell88/style-kit.git"
+  },
+  "author": "ININ-Frontend-Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/surajhell88/style-kit/issues"
+  },
+  "homepage": "https://github.com/surajhell88/style-kit#readme",
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  }
+}
