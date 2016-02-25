@@ -1,0 +1,19 @@
+{
+  "name": "Style Kit",
+  "description": "Ideal for Teams to share and maintain code standards across levels",
+  "main": "index.js",
+  "authors": [
+    "ININ-Frontend-Team"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/surajhell88/style-kit",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
