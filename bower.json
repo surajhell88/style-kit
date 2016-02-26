@@ -15,5 +15,10 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "devDependencies": {
+    "bootstrap": "^3.3.6",
+    "Split.js": "^1.0.6",
+    "highlight": "https://github.com/isagalaev/highlight.js"
+  }
 }
