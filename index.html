@@ -5,12 +5,27 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" href="less/custom.css">
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<div class="container-fluid no-padding">
 		<header class="header">
-			<div class="logo"></div>
-			<h3>Track Style Guide</h3>
+			<!-- <div class="logo"></div> -->
+			<h3>Product Kit</h3>
+			<div class="platform">
+				<div class="dropdown">
+				  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				    Select Platform
+				    <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+				    <li><a href="#">UI Components</a></li>
+				    <li><a href="#">Ember Components</a></li>
+				    <li><a href="#">Bower Packages</a></li>
+				  </ul>
+				</div>
+			</div>
 		</header>
 		<div class="left-column">
 			<h5>LIBRARY</h5>
@@ -23,9 +38,18 @@
 				<li><a href="#">Toolbar</a></li>
 				<li><a href="#">Tooltip</a></li>
 			</ul>
+			<div class="search-component">
+				<input type="text" class="form-control" placeholder="Search component..." aria-describedby="basic-addon1">
+				<!-- <div class="input-group">
+			      <input type="text" class="form-control" placeholder="Search component" style="width:153px">
+			      <span class="input-group-btn">
+			        <button class="btn btn-default" type="button">Go!</button>
+			      </span>
+			    </div> --><!-- /input-group -->
+			</div>
 		</div>
 		<div class="right-panel">
-			ss
+			
 		</div>
 	</div>
 </body>
