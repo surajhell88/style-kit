@@ -9,4 +9,10 @@ Ideal for Teams to share and maintain code standards across levels
 
 ## Usage
 
+To compile less files
+
+`npm run compile-less`
+
+To run app
+
 `npm run start-app`

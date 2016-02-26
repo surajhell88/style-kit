@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-app": "http-server -op 8282"
+    "start-app": "npm run compile-less && npm run start-http-server",
+    "start-http-server": "http-server -op 8282",
+    "compile-less": "lessc less/custom.less less/custom.css"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,8 @@
   },
   "homepage": "https://github.com/surajhell88/style-kit#readme",
   "devDependencies": {
-    "http-server": "^0.9.0"
+    "http-server": "^0.9.0",
+    "less": "^2.6.0",
+    "less-plugin-clean-css": "^1.5.1"
   }
 }
