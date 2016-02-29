@@ -5,86 +5,94 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" href="less/custom.css">
-	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="bower_components/Split.js/split.min.js"></script>
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
 </head>
 <body>
-	<div class="container-fluid no-padding">
-		<header class="header">
-			<!-- <div class="logo"></div> -->
-			<h3>Product Kit</h3>
-			<div class="platform">
-				<div class="dropdown">
-				  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-				    Select Platform
-				    <span class="caret"></span>
-				  </button>
-				  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-				    <li><a href="#">UI Components</a></li>
-				    <li><a href="#">Ember Components</a></li>
-				    <li><a href="#">Bower Packages</a></li>
-				  </ul>
-				</div>
-			</div>
-		</header>
-		<div class="left-column">
-			<h5>LIBRARY</h5>
-			<ul>
-				<li><a href="#">Buttons</a></li>
-				<li><a href="#">Dropdown</a></li>
-				<li><a href="#">Forms</a></li>
-				<li><a href="#">Labels</a></li>
-				<li><a href="#">Tabs</a></li>
-				<li><a href="#">Toolbar</a></li>
-				<li><a href="#">Tooltip</a></li>
-			</ul>
-			<div class="search-component">
-				<input type="text" class="form-control" placeholder="Search component..." aria-describedby="basic-addon1">
-				<!-- <div class="input-group">
-			      <input type="text" class="form-control" placeholder="Search component" style="width:153px">
-			      <span class="input-group-btn">
-			        <button class="btn btn-default" type="button">Go!</button>
-			      </span>
-			    </div> --><!-- /input-group -->
+<div class="container-fluid no-padding">
+	<header class="header">
+		<!-- <div class="logo"></div> -->
+		<h3>Product Kit</h3>
+		<div class="platform">
+			<div class="dropdown">
+			  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			    Select Platform
+			    <span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+			    <li><a href="#">UI Components</a></li>
+			    <li><a href="#">Ember Components</a></li>
+			    <li><a href="#">Bower Packages</a></li>
+			  </ul>
 			</div>
 		</div>
-		<div class="right-panel">
-			<!-- <div id="html" class="split split-horizontal"></div>
-			<div id="preview" class="split split-horizontal"></div>			
-			<div id="css" class="split split-horizontal"></div> -->
-			<div id="a" class="split split-horizontal">
-		      <div id="c" class="split content"></div>
-		      <!-- <div id="d" class="split content"></div> -->
-		    </div>
-		    <div id="b" class="split split-horizontal">
-		      <div id="e" class="split content"></div>
-		      <div id="f" class="split content"></div>
-		    </div>
+	</header>
+	<div class="left-column">
+		<h5>LIBRARY</h5>
+		<ul>
+			<li><a href="#">Buttons</a></li>
+			<li><a href="#">Dropdown</a></li>
+			<li><a href="#">Forms</a></li>
+			<li><a href="#">Labels</a></li>
+			<li><a href="#">Tabs</a></li>
+			<li><a href="#">Toolbar</a></li>
+			<li><a href="#">Tooltip</a></li>
+		</ul>
+		<div class="search-component">
+			<input type="text" class="form-control" placeholder="Search component..." aria-describedby="basic-addon1">
+			<!-- <div class="input-group">
+		      <input type="text" class="form-control" placeholder="Search component" style="width:153px">
+		      <span class="input-group-btn">
+		        <button class="btn btn-default" type="button">Go!</button>
+		      </span>
+		    </div> --><!-- /input-group -->
 		</div>
 	</div>
-	<script type="text/javascript">
-		// $(document).ready(function () {
-		// 	Split(['#html', '#preview', '#css'], {});
-		// });
-		Split(['#a', '#b'], {
-		      gutterSize: 8,
-		      cursor: 'col-resize'
-		    })
+	<div class="right-panel">
+		<!-- <div id="html" class="split split-horizontal"></div>
+		<div id="preview" class="split split-horizontal"></div>			
+		<div id="css" class="split split-horizontal"></div> -->
+		<div id="a" class="split split-horizontal">
+	      <div id="c" class="split content"></div>
+	      <!-- <div id="d" class="split content"></div> -->
+	    </div>
+	    <div id="b" class="split split-horizontal">
+	      <div id="e" class="split content"></div>
+	      <div id="f" class="split content"></div>
+	    </div>
+	</div>
+</div>
+<script type="text/javascript">
+	// $(document).ready(function () {
+	// 	Split(['#html', '#preview', '#css'], {});
+	// });
+	Split(['#a', '#b'], {
+	      gutterSize: 8,
+	      cursor: 'col-resize'
+	    })
 
-		    Split(['#c'], {
-		      direction: 'vertical',
-		      sizes: [100],
-		      // gutterSize: 8,
-		      // cursor: 'row-resize'
-		    })
+	    Split(['#c'], {
+	      direction: 'vertical',
+	      sizes: [100],
+	      // gutterSize: 8,
+	      // cursor: 'row-resize'
+	    })
 
-		    Split(['#e', '#f'], {
-		      direction: 'vertical',
-		      sizes: [50, 50],
-		      gutterSize: 8,
-		      cursor: 'row-resize'
-		    })
-	</script>
+	    Split(['#e', '#f'], {
+	      direction: 'vertical',
+	      sizes: [50, 50],
+	      gutterSize: 8,
+	      cursor: 'row-resize'
+	    });
+
+	    //for selected list link
+	    $(document).ready(function(){
+	    	$('.left-column li a').click(function () {
+		        $(this).addClass("active");
+		        $(this).parent().siblings().find('a').removeClass("active");
+		    });
+	    })
+</script>
 </body>
 </html>
