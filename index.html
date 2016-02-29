@@ -5,9 +5,6 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" href="less/custom.css">
-	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="bower_components/Split.js/split.min.js"></script>
-	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
 </head>
 <body>
 <div class="container-fluid no-padding">
@@ -57,29 +54,33 @@
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="bower_components/Split.js/split.min.js"></script>
 <script type="text/javascript">
 	// $(document).ready(function () {
 	// 	Split(['#html', '#preview', '#css'], {});
 	// });
 	Split(['#a', '#b'], {
-	      gutterSize: 8,
-	      cursor: 'col-resize'
-	    })
+		gutterSize: 8,
+		cursor: 'col-resize'
+    	});
 
-	    Split(['#e', '#f'], {
-	      direction: 'vertical',
-	      sizes: [50, 50],
-	      gutterSize: 8,
-	      cursor: 'row-resize'
-	    });
+	Split(['#e', '#f'], {
+		direction: 'vertical',
+		sizes: [50, 50],
+		gutterSize: 8,
+		cursor: 'row-resize'
+	});
 
-	    //for selected list link
-	    $(document).ready(function(){
-	    	$('.left-column li a').click(function () {
-		        $(this).addClass("active");
-		        $(this).parent().siblings().find('a').removeClass("active");
-		    });
-	    })
+	//for selected list link
+	$(document).ready(function(){
+		$('.left-column li a').click(function () {
+		        	$(this).addClass("active");
+		        	$(this).parent().siblings().find('a').removeClass("active");
+	    	});
+	});
 </script>
 </body>
 </html>
