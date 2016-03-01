@@ -1,6 +1,10 @@
 # Style Kit
 Ideal for Teams to share and maintain code standards across levels
 
+## Dependencies
+
+`npm`, `bower` & `gulp` should be already installed.
+
 ## Installation
 
 `npm install`
