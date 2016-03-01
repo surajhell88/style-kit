@@ -1,6 +1,10 @@
 # Style Kit
 Ideal for Teams to share and maintain code standards across levels
 
+## Dependencies
+
+`npm`, `bower` & `gulp` should be already installed.
+
 ## Installation
 
 `npm install`
@@ -8,10 +12,6 @@ Ideal for Teams to share and maintain code standards across levels
 `bower install` (For SuperUser `sudo bower install --allow-root`)
 
 ## Usage
-
-To compile less files
-
-`npm run compile-less`
 
 To run app
 
