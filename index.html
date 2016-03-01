@@ -28,13 +28,13 @@
 	<div class="left-column">
 		<h5>LIBRARY</h5>
 		<ul>
-			<li><a href="#">Buttons</a></li>
-			<li><a href="#">Dropdown</a></li>
-			<li><a href="#">Forms</a></li>
-			<li><a href="#">Labels</a></li>
-			<li><a href="#">Tabs</a></li>
-			<li><a href="#">Toolbar</a></li>
-			<li><a href="#">Tooltip</a></li>
+			<li><a href="#" class="component-btn" data-type="button">Buttons</a></li>
+			<li><a href="#" class="component-btn" data-type="dropdown">Dropdown</a></li>
+			<li><a href="#" class="component-btn" data-type="forms">Forms</a></li>
+			<li><a href="#" class="component-btn" data-type="label">Labels</a></li>
+			<li><a href="#" class="component-btn" data-type="tabs">Tabs</a></li>
+			<li><a href="#" class="component-btn" data-type="toolbar">Toolbar</a></li>
+			<li><a href="#" class="component-btn" data-type="tooltip">Tooltip</a></li>
 		</ul>
 		<div class="search-component">
 			<input type="text" class="form-control" placeholder="Search component..." aria-describedby="basic-addon1">
@@ -47,15 +47,17 @@
 		</div>
 	</div>
 	<div class="right-panel">
-		<div id="a" class="split split-horizontal grid-type">
+		<div id="grid-preview" class="split split-horizontal grid-type">
 			<div class="grid-label">PREVIEW</div>
 		</div>
-		<div id="b" class="split split-horizontal">
-			<div id="e" class="split content grid-type">
+		<div id="grid-code" class="split split-horizontal">
+			<div id="grid-code-html" class="split content grid-type">
 				<div class="grid-label">HTML</div>
+				<div class="code-editor" id="html-editor"></div>
 			</div>
-			<div id="f" class="split content grid-type">
-				<div class="grid-label">EMBER</div>
+			<div id="grid-code-js" class="split content grid-type">
+				<div class="grid-label">JAVASCRIPT</div>
+				<div class="code-editor" id="js-editor"></div>
 			</div>
 		</div>
 	</div>
@@ -64,16 +66,17 @@
 <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="bower_components/Split.js/split.min.js"></script>
+<script type="text/javascript"  src="bower_components/ace-builds/src-noconflict/ace.js"></script>
 <script type="text/javascript">
 	// $(document).ready(function () {
 	// 	Split(['#html', '#preview', '#css'], {});
 	// });
-	Split(['#a', '#b'], {
+	Split(['#grid-preview', '#grid-code'], {
 		gutterSize: 8,
 		cursor: 'col-resize'
     	});
 
-	Split(['#e', '#f'], {
+	Split(['#grid-code-html', '#grid-code-js'], {
 		direction: 'vertical',
 		sizes: [50, 50],
 		gutterSize: 8,
@@ -82,10 +85,41 @@
 
 	//for selected list link
 	$(document).ready(function(){
-		$('.left-column li a').click(function () {
-		        	$(this).addClass("active");
-		        	$(this).parent().siblings().find('a').removeClass("active");
-	    	});
+
+		var jsEditor = ace.edit("js-editor");
+	    jsEditor.setTheme("ace/theme/solarized_light");
+	    jsEditor.getSession().setMode("ace/mode/javascript");
+
+		var htmlEditor = ace.edit("html-editor");
+	    htmlEditor.setTheme("ace/theme/textmate");
+	    htmlEditor.getSession().setMode("ace/mode/html");
+
+	    var listOfComponents = {
+    	"button": {
+    		"html": '<div class="btn-group">\n\t<button type="button" class="btn btn-small">Button</button>\n</div>',
+    		"js": '$(".btn.btn-small").click(function() {\n\talert("Button is Clicked !!!");\n})',
+    		"css": ''
+    	},
+    	"dropdown": {
+    		"html": '<select>\n\t<option value="volvo">Volvo</option>\n\t<option value="saab">Saab</option>\n\t<option value="mercedes">Mercedes</option>\n\t<option value="audi">Audi</option>\n</select>',
+    		"js": '',
+    		"css": ''
+    	}
+    };
+
+		$('.component-btn').click(function () {
+	        	$(this).addClass("active");
+	        	$(this).parent().siblings().find('a').removeClass("active");
+
+	        	type = $(this).data('type');
+
+   			 	htmlEditor.session.setValue(listOfComponents[type]["html"]);
+			 	document.getElementById('grid-preview').innerHTML=listOfComponents[type]["html"];
+
+   			 	jsEditor.session.setValue(listOfComponents[type]["js"]);
+			 	// document.getElementById('code-editor').innerHTML=listOfComponents[type]["js"];
+			 	$(".btn.btn-small").click(function(){ alert("Button is Clicked !!!");});
+    	});
 	});
 </script>
 </body>
