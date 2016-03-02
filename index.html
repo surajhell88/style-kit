@@ -1,157 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-	<link rel="stylesheet" href="css/custom.css">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/custom.css">
 </head>
+
 <body>
-<div class="container-fluid no-padding">
-	<header class="header">
-		<!-- <div class="logo"></div> -->
-		<h3>Product Kit</h3>
-		<div class="platform">
-			<div class="dropdown">
-			  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-			    Select Platform
-			    <span class="caret"></span>
-			  </button>
-			  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-			    <li><a href="#">UI Components</a></li>
-			    <li><a href="#">Ember Components</a></li>
-			    <li><a href="#">Bower Packages</a></li>
-			  </ul>
-			</div>
-		</div>
-	</header>
-	<div class="left-column">
-		<h5>COMPONENTS</h5>
-		<ul>
-			<li><a href="#" class="component-btn" data-type="button">Buttons</a></li>
-			<li><a href="#" class="component-btn" data-type="forms">Form Fields</a></li>
-			<li><a href="#" class="component-btn" data-type="tabs">Tabs</a></li>
-			<li><a href="#" class="component-btn" data-type="tooltip">Tooltip</a></li>
-			<li><a href="#" class="component-btn" data-type="tables">Tables</a></li>
-		</ul>
-		<div class="search-component">
-			<input type="text" class="form-control" placeholder="Search component..." aria-describedby="basic-addon1">
-			<!-- <div class="input-group">
+    <div class="container-fluid no-padding">
+        <header class="header">
+            <!-- <div class="logo"></div> -->
+            <h3>Product Kit</h3>
+            <div class="platform">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Select Platform
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                        <li><a href="#">UI Components</a></li>
+                        <li><a href="#">Ember Components</a></li>
+                        <li><a href="#">Bower Packages</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div class="left-column">
+            <h5>COMPONENTS</h5>
+            <ul>
+                <li><a href="#" class="component-btn" data-type="button">Buttons</a></li>
+                <li><a href="#" class="component-btn" data-type="forms">Form Fields</a></li>
+                <li><a href="#" class="component-btn" data-type="tabs">Tabs</a></li>
+                <li><a href="#" class="component-btn" data-type="tooltip">Tooltip</a></li>
+                <li><a href="#" class="component-btn" data-type="tables">Tables</a></li>
+            </ul>
+            <div class="search-component">
+                <input type="text" class="form-control" placeholder="Search component..." aria-describedby="basic-addon1">
+                <!-- <div class="input-group">
 		      <input type="text" class="form-control" placeholder="Search component" style="width:153px">
 		      <span class="input-group-btn">
 		        <button class="btn btn-default" type="button">Go!</button>
 		      </span>
-		    </div> --><!-- /input-group -->
-		</div>
-	</div>
-	<div class="right-panel">
-		<div id="grid-preview" class="split content split-horizontal grid-type grid-preview">
-			<div class="grid-label">PREVIEW</div>
-			<div class="component-preview" id="component-preview"></div>
-		</div>
-		<div id="grid-code" class="split split-horizontal">
-			<div id="grid-code-html" class="split content grid-type">
-				<div class="grid-label">HTML</div>
-				<div class="code-editor" id="html-editor"></div>
-			</div>
-			<div id="grid-code-js" class="split content grid-type">
-				<div class="grid-label">JAVASCRIPT</div>
-				<div class="code-editor" id="js-editor"></div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="bower_components/Split.js/split.min.js"></script>
-<script type="text/javascript"  src="bower_components/ace-builds/src-noconflict/ace.js"></script>
-<script type="text/javascript">
-	// $(document).ready(function () {
-	// 	Split(['#html', '#preview', '#css'], {});
-	// });
-
-	//for selected list link
-	$(document).ready(function(){
-
-		var jsEditor = ace.edit("js-editor");
-	    jsEditor.setTheme("ace/theme/textmate");
-	    jsEditor.getSession().setMode("ace/mode/javascript");
-
-		var htmlEditor = ace.edit("html-editor");
-	    htmlEditor.setTheme("ace/theme/textmate");
-	    htmlEditor.getSession().setMode("ace/mode/html");
-	    htmlEditor.getSession().setUseWorker(false);
-
-	Split(['#grid-preview', '#grid-code'], {
-		gutterSize: 8,
-		cursor: 'col-resize'
-    	});
-
-	Split(['#grid-code-html', '#grid-code-js'], {
-		direction: 'vertical',
-		sizes: [50, 50],
-		gutterSize: 8,
-		cursor: 'row-resize',
-		onDragEnd: function  () {
-			jsEditor.resize();
-			htmlEditor.resize();
-		}
-	});
-	    var listOfComponents = {
-	    	"button": {
-	    		"html": '<button type="button" class="btn btn-default">Default</button>\n<button type="button" class="btn btn-primary">Primary</button>\n<button type="button" class="btn btn-success">Success</button>\n<button type="button" class="btn btn-info">Info</button>\n<button type="button" class="btn btn-warning">Warning</button>\n<button type="button" class="btn btn-danger">Danger</button>\n<button type="button" class="btn btn-link">Link</button>',
-	    		"js": '',
-	    		"css": ''
-	    	},
-	    	"dropdown": {
-	    		"html": '<select>\n\t<option value="volvo">Volvo</option>\n\t<option value="saab">Saab</option>\n\t<option value="mercedes">Mercedes</option>\n\t<option value="audi">Audi</option>\n</select>',
-	    		"js": '',
-	    		"css": ''
-	    	},
-	    	"forms": {
-	    		"html": '<div class="form-group">\n\t<label for="exampleInputEmail1">Input field</label>\n\t<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">\n</div>\n\n<div class="form-group">\n\t<label for="ro">Readonly input field</label>\n\t<input class="form-control" type="text" placeholder="Readonly input here…" readonly>\n</div>\n\n<div class="form-group">\n\t<label for="comment">Comment:</label>\n\t<textarea class="form-control" rows="5" id="comment"></textarea>\n</div>',
-	    		"js": '',
-	    		"css": ''
-	    	},
-	    	"tabs": {
-	    		"html": '<ul class="nav nav-tabs">\n\t<li role="presentation" class="active"><a href="#">Home</a></li>\n\t<li role="presentation"><a href="#">Profile</a></li>\n\t<li role="presentation"><a href="#">Messages</a></li>\n</ul>',
-	    		"js": '',
-	    		"css": ''
-	    	},
-	    	"tooltip": {
-	    		"html": '<button type="button" data-container="body" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>\n<button type="button" data-container="body" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>\n<button type="button" data-container="body" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</button>\n<button type="button" data-container="body" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</button>\n',
-	    		"js": '$(document).ready(function(){\n\t$("[data-toggle="tooltip"]").tooltip();\n});',
-	    		"css": ''
-	    	},
-	    	"tables": {
-	    		"html": '<table class="table table-bordered">\n\t<thead>\n\t\t<tr>\n\t\t\t<th>#</th>\n\t\t\t<th>First Name</th>\n\t\t\t<th>Last Name</th>\n\t\t\t<th>Username</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<th scope="row">1</th>\n\t\t\t<td>Mark</td>\n\t\t\t<td>Otto</td>\n\t\t\t<td>@mdo</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th scope="row">2</th>\n\t\t\t<td>Jacob</td>\n\t\t\t<td>Thornton</td>\n\t\t\t<td>@fat</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th scope="row">3</th>\n\t\t\t<td>Larry</td>\n\t\t\t<td>the Bird</td>\n\t\t\t<td>@twitter</td>\n\t\t</tr>\n\t</tbody>\n</table>',
-	    		"js": '',
-	    		"css": ''
-	    	},
-	    };
-	 
-
-		  
-		$('.component-btn').click(function () {
-	        	$(this).addClass("active");
-	        	$(this).parent().siblings().find('a').removeClass("active");
-
-	        	type = $(this).data('type');
-
-   			 	htmlEditor.session.setValue(listOfComponents[type]["html"]);
-			 	document.getElementById('component-preview').innerHTML=listOfComponents[type]["html"];
-
-   			 	jsEditor.session.setValue(listOfComponents[type]["js"]);
-			 	// document.getElementById('code-editor').innerHTML=listOfComponents[type]["js"];
-			 	$(".btn.btn-small").click(function(){ alert("Button is Clicked !!!");});
-			 	if(type=='tooltip'){
-			 		$('[data-toggle="tooltip"]').tooltip()
-			 	}
-    	});
-	});
-	
-    	
-</script>
+		    </div> -->
+                <!-- /input-group -->
+            </div>
+        </div>
+        <div class="right-panel">
+            <div id="grid-preview" class="split content split-horizontal grid-type grid-preview">
+                <div class="grid-label">PREVIEW</div>
+                <div class="component-preview" id="component-preview"></div>
+            </div>
+            <div id="grid-code" class="split split-horizontal">
+                <div id="grid-code-html" class="split content grid-type">
+                    <div class="grid-label">HTML</div>
+                    <div class="code-editor" id="html-editor"></div>
+                </div>
+                <div id="grid-code-js" class="split content grid-type">
+                    <div class="grid-label">JAVASCRIPT</div>
+                    <div class="code-editor" id="js-editor"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/Split.js/split.min.js"></script>
+    <script type="text/javascript" src="bower_components/ace-builds/src-noconflict/ace.js"></script>
+    <script type="text/javascript" src="js/app/index.js"></script>
 </body>
+
 </html>
