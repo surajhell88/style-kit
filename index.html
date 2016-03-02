@@ -33,6 +33,8 @@
 			<li><a href="#" class="component-btn" data-type="tabs">Tabs</a></li>
 			<li><a href="#" class="component-btn" data-type="tooltip">Tooltip</a></li>
 			<li><a href="#" class="component-btn" data-type="tables">Tables</a></li>
+			<li><a href="#" class="component-btn" data-type="popover">Popover</a></li>
+			<!-- <li><a href="#" class="component-btn" data-type="modal">Modal</a></li> -->
 		</ul>
 		<div class="search-component">
 			<input type="text" class="form-control" placeholder="Search component..." aria-describedby="basic-addon1">
@@ -52,10 +54,12 @@
 		<div id="grid-code" class="split split-horizontal">
 			<div id="grid-code-html" class="split content grid-type">
 				<div class="grid-label">HTML</div>
+				<div class="grid-copy-code"><a href="#">Copy</a></div>
 				<div class="code-editor" id="html-editor"></div>
 			</div>
 			<div id="grid-code-js" class="split content grid-type">
 				<div class="grid-label">JAVASCRIPT</div>
+				<div class="grid-copy-code"><a href="#">Copy</a></div>
 				<div class="code-editor" id="js-editor"></div>
 			</div>
 		</div>
@@ -110,7 +114,7 @@
 	    		"css": ''
 	    	},
 	    	"forms": {
-	    		"html": '<div class="form-group">\n\t<label for="exampleInputEmail1">Input field</label>\n\t<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">\n</div>\n\n<div class="form-group">\n\t<label for="ro">Readonly input field</label>\n\t<input class="form-control" type="text" placeholder="Readonly input here…" readonly>\n</div>\n\n<div class="form-group">\n\t<label for="comment">Comment:</label>\n\t<textarea class="form-control" rows="5" id="comment"></textarea>\n</div>',
+	    		"html": '<div class="form-group">\n\t<label for="exampleInputEmail1">Input field</label>\n\t<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">\n</div>\n\n<div class="form-group">\n\t<label for="ro">Readonly input field</label>\n\t<input class="form-control" type="text" placeholder="Readonly input here…" readonly>\n</div>\n\n<div class="form-group">\n\t<label for="comment">Comment:</label>\n\t<textarea class="form-control" rows="5" id="comment"></textarea>\n</div>\n\n<div class="form-group">\n\t<label for="exampleInputPassword1">Password</label>\n\t<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">\n</div>\n\n<div class="form-group">\n\t<label for="exampleInputFile">File input</label>\n\t<input type="file" id="exampleInputFile">\n</div>\n\n<div class"form-group">\n\t<label for="checkboxinput">Checkbox input</label>\n\t<div class="checkbox">\n\t\t<label>\n\t\t\t<input type="checkbox">Check me out\n\t\t</label>\n\t</div>\n</div>\n\n<div class"form-group">\n\t<label for="radioinput">Radio input</label>\n\t<div class="checkbox">\n\t\t<label>\n\t\t\t<input type="radio" name="r1"> Option 1\n\t\t\t<input type="radio" name="r1"> Option 2\n\t\t\t<input type="radio" name="r1"> Option 3\n\t\t</label>\n\t</div>\n</div>',
 	    		"js": '',
 	    		"css": ''
 	    	},
@@ -129,8 +133,20 @@
 	    		"js": '',
 	    		"css": ''
 	    	},
+	    	"popover": {
+	    		"html": '<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on top\n</button>\n\n<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on bottom\n</button>\n\n<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on right\n</button>\n\n<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on left\n</button>',
+	    		"js": '',
+	    		"css": ''
+	    	},
+	    	// "modal": {
+	    	// 	"html": '<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">\n\tLaunch demo modal\n</button><div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\n<div class="modal-dialog" role="document">\n\t<div class="modal-content">\n\t\t<div class="modal-header">\n\t\t\t<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>\n\t\t\t<h4 class="modal-title" id="myModalLabel">Modal title</h4>\n\t\t</div>\n\t\t<div class="modal-body">\n\t\t...</div>\n\t\t<div class="modal-footer">\n\t\t\t<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>\n\t\t\t<button type="button" class="btn btn-primary">Save changes</button>\n\t\t</div>\n\t\t</div>\n\t</div>\n</div>',
+	    	// 	"js": '',
+	    	// 	"css": ''
+	    	// },
 	    };
 	 
+	 	
+	    
 
 		  
 		$('.component-btn').click(function () {
@@ -147,7 +163,11 @@
 			 	$(".btn.btn-small").click(function(){ alert("Button is Clicked !!!");});
 			 	if(type=='tooltip'){
 			 		$('[data-toggle="tooltip"]').tooltip()
-			 	}
+			 	};
+			 	$('[data-toggle="popover"]').popover();
+			 	$('#myModal').on('shown.bs.modal', function () {
+				  $('#myInput').focus()
+				})
     	});
 	});
 	
