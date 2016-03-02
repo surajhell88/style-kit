@@ -19,7 +19,7 @@ gulp.task('start-live-server', function () {
 gulp.task('compile-less', function () {
 	return gulp.src('./less/custom.less')
 	.pipe(less({}))
-	.pipe(gulp.dest('./less/'));
+	.pipe(gulp.dest('./css/'));
 });
 
 gulp.task('watch', function () {
