@@ -5,7 +5,7 @@ var 	gulp  = require('gulp'),
     	less = require('gulp-less'),
     	params = {
     		port: 8282,
-    		watch: ['index.html','less/custom.css']
+    		watch: ['index.html','css','js']
     	};
 
 // create a default task and just log a message
@@ -19,7 +19,7 @@ gulp.task('start-live-server', function () {
 gulp.task('compile-less', function () {
 	return gulp.src('./less/custom.less')
 	.pipe(less({}))
-	.pipe(gulp.dest('./less/'));
+	.pipe(gulp.dest('./css/'));
 });
 
 gulp.task('watch', function () {
