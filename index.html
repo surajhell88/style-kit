@@ -1,75 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-	<link rel="stylesheet" href="css/custom.css">
-</head>
-<body>
-<div class="container-fluid no-padding">
-	<header class="header">
-		<!-- <div class="logo"></div> -->
-		<h3>Product Kit</h3>
-		<div class="platform">
-			<div class="dropdown">
-			  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-			    Select Platform
-			    <span class="caret"></span>
-			  </button>
-			  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-			    <li><a href="#">UI Components</a></li>
-			    <li><a href="#">Ember Components</a></li>
-			    <li><a href="#">Bower Packages</a></li>
-			  </ul>
-			</div>
-		</div>
-	</header>
-	<div class="left-column">
-		<h5>COMPONENTS</h5>
-		<ul>
-			<li><a href="#" class="component-btn" data-type="button">Buttons</a></li>
-			<li><a href="#" class="component-btn" data-type="forms">Form Fields</a></li>
-			<li><a href="#" class="component-btn" data-type="tabs">Tabs</a></li>
-			<li><a href="#" class="component-btn" data-type="tooltip">Tooltip</a></li>
-			<li><a href="#" class="component-btn" data-type="tables">Tables</a></li>
-			<li><a href="#" class="component-btn" data-type="popover">Popover</a></li>
-			<!-- <li><a href="#" class="component-btn" data-type="modal">Modal</a></li> -->
-		</ul>
-		<div class="search-component">
-			<input type="text" class="form-control" placeholder="Search component..." aria-describedby="basic-addon1">
-			<!-- <div class="input-group">
-		      <input type="text" class="form-control" placeholder="Search component" style="width:153px">
-		      <span class="input-group-btn">
-		        <button class="btn btn-default" type="button">Go!</button>
-		      </span>
-		    </div> --><!-- /input-group -->
-		</div>
-	</div>
-	<div class="right-panel">
-		<div id="grid-preview" class="split content split-horizontal grid-type grid-preview">
-			<div class="grid-label">PREVIEW</div>
-			<div class="component-preview" id="component-preview"></div>
-		</div>
-		<div id="grid-code" class="split split-horizontal">
-			<div id="grid-code-html" class="split content grid-type">
-				<div class="grid-label">HTML</div>
-				<div class="grid-copy-code"><a href="#">Copy</a></div>
-				<div class="code-editor" id="html-editor"></div>
-			</div>
-			<div id="grid-code-js" class="split content grid-type">
-				<div class="grid-label">JAVASCRIPT</div>
-				<div class="grid-copy-code"><a href="#">Copy</a></div>
-				<div class="code-editor" id="js-editor"></div>
-			</div>
-		</div>
-	</div>
-</div>
 
-<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="bower_components/Split.js/split.min.js"></script>
-<script type="text/javascript" src="bower_components/ace-builds/src-noconflict/ace.js"></script>
-<script type="text/javascript" src="js/app/index.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+    <div class="container-fluid no-padding">
+        <header class="header">
+            <!-- <div class="logo"></div> -->
+            <h3>Product Kit</h3>
+            <div class="platform">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Select Platform
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                        <li><a href="#">UI Components</a></li>
+                        <li><a href="#">Ember Components</a></li>
+                        <li><a href="#">Bower Packages</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div class="left-column">
+            <h5>COMPONENTS</h5>
+            <ul>
+                <li><a href="#" class="component-btn" data-type="button">Buttons</a></li>
+                <li><a href="#" class="component-btn" data-type="forms">Form Fields</a></li>
+                <li><a href="#" class="component-btn" data-type="tabs">Tabs</a></li>
+                <li><a href="#" class="component-btn" data-type="tooltip">Tooltip</a></li>
+                <li><a href="#" class="component-btn" data-type="tables">Tables</a></li>
+                <li><a href="#" class="component-btn" data-type="popover">Popover</a></li>
+                <!-- <li><a href="#" class="component-btn" data-type="modal">Modal</a></li> -->
+            </ul>
+            <div class="search-component">
+                <input type="text" class="form-control" placeholder="Search component..." aria-describedby="basic-addon1">
+                <!-- <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search component" style="width:153px">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+            </div> -->
+                <!-- /input-group -->
+            </div>
+        </div>
+        <div class="right-panel">
+            <div id="grid-preview" class="split content split-horizontal grid-type grid-preview">
+                <div class="grid-label">PREVIEW</div>
+                <div class="component-preview" id="component-preview"></div>
+            </div>
+            <div id="grid-code" class="split split-horizontal">
+                <div id="grid-code-html" class="split content grid-type">
+                    <div class="grid-label">HTML</div>
+                    <div class="grid-copy-code"><a href="#">Copy</a></div>
+                    <div class="code-editor" id="html-editor"></div>
+                </div>
+                <div id="grid-code-js" class="split content grid-type">
+                    <div class="grid-label">JAVASCRIPT</div>
+                    <div class="grid-copy-code"><a href="#">Copy</a></div>
+                    <div class="code-editor" id="js-editor"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script data-main="js/app/main" src="js/lib/require.js"></script>
 </body>
+
 </html>
