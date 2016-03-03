@@ -42,10 +42,10 @@ define(['bootstrap', 'split', 'ace', 'list-of-components'], function(bootstrap, 
             }
         });
         htmlEditor.getSession().on('change', function(e) {
-               document.getElementById('component-preview').innerHTML = htmlEditor.session.getValue();
+               document.getElementById('component-preview').innerHTML = htmlEditor.session.getValue(); 
         });
         $('.run-code').click(function(){
-               eval(jsEditor.session.getValue());
+               eval(jsEditor.session.getValue()); 
         });
     });
     return app;
