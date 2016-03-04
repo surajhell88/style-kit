@@ -39,6 +39,8 @@ define(['bootstrap', 'split', 'ace', 'list-of-components'], function(bootstrap, 
             $(".btn.btn-small").click(function() { alert("Button is Clicked !!!"); });
             if (type == 'tooltip') {
                 $('[data-toggle="tooltip"]').tooltip()
+            } else if(type == 'popover'){
+                $('[data-toggle="popover"]').popover();
             }
         });
         htmlEditor.getSession().on('change', function(e) {
@@ -46,6 +48,16 @@ define(['bootstrap', 'split', 'ace', 'list-of-components'], function(bootstrap, 
         });
         $('.run-code').click(function(){
                eval(jsEditor.session.getValue()); 
+        });
+        // popover
+        $('body').on('click', function (e) {
+            $('[data-toggle="popover"]').each(function () {
+                //the 'is' for buttons that trigger popups
+                //the 'has' for icons within a button that triggers a popup
+                if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+                    $(this).popover('hide');
+                }
+            });
         });
     });
     return app;
