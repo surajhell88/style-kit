@@ -8,6 +8,12 @@ require.config({
 		},
 		'split': {
 			exports: 'split'
+		},
+		'clipboard':{
+			exports: 'clipboard'
+		},
+		'ZeroClipboard':{
+			exports: 'ZeroClipboard'
 		}
 	},
 	paths: {
@@ -16,7 +22,8 @@ require.config({
 		'jquery': '../../bower_components/jquery/dist/jquery.min',
 		'split': '../../bower_components/Split.js/split.min',
 		'ace': '../../bower_components/ace-builds/src-noconflict/ace',
-
+		'clipboard': '../../bower_components/clipboard/dist/clipboard.min',
+		'ZeroClipboard': '../../bower_components/zeroclipboard/dist/ZeroClipboard.min'
 		/*Aliases for Custom Scripts*/
 	}
 });
@@ -24,4 +31,4 @@ require.config({
 // This code might be called before the require.config() in main.js
 // has executed. When that happens, require.js will attempt to
 // load 'scripts/foo.js' instead of 'scripts/libs/foo-1.1.3.js'
-require(['index']);
+require(['index','ZeroClipboard']);

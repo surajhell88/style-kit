@@ -1,6 +1,19 @@
-define(['bootstrap', 'split', 'ace', 'list-of-components'], function(bootstrap, split, ace, listOfComponents) {
+define(['bootstrap', 'split', 'ace', 'ZeroClipboard', 'list-of-components'], function(bootstrap, split, ace, ZeroClipboard, listOfComponents) {
     var app = {};
     $(document).ready(function() {
+        // var clip=new clipboard('#cpy');
+
+        var client1 = new ZeroClipboard( $('#cpy-html') );
+        var client2 = new ZeroClipboard( $('#cpy-js') );
+
+        client1.on('copy', function(event) {
+          client1.setText(htmlEditor.session.getValue());
+        });
+
+        client2.on('copy', function(event) {
+          client2.setText(jsEditor.session.getValue());
+        });
+
         var jsEditor = ace.edit("js-editor");
         jsEditor.setTheme("ace/theme/textmate");
         jsEditor.getSession().setMode("ace/mode/javascript");
@@ -25,6 +38,7 @@ define(['bootstrap', 'split', 'ace', 'list-of-components'], function(bootstrap, 
                 htmlEditor.resize();
             }
         });
+
         $('.component-btn').click(function() {
             $(this).addClass("active");
             $(this).parent().siblings().find('a').removeClass("active");

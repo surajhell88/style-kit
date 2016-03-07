@@ -19,6 +19,7 @@
   "devDependencies": {
     "bootstrap": "^3.3.6",
     "Split.js": "^1.0.6",
-    "ace-builds": "https://github.com/ajaxorg/ace-builds.git"
+    "ace-builds": "https://github.com/ajaxorg/ace-builds.git",
+    "zeroclipboard": "2.2.0"
   }
 }
