@@ -8,10 +8,12 @@ define(['bootstrap', 'split', 'ace', 'ZeroClipboard', 'list-of-components'], fun
 
         client1.on('copy', function(event) {
           client1.setText(htmlEditor.session.getValue());
+          $("#cpy-html").attr("title","Copied");
         });
 
         client2.on('copy', function(event) {
           client2.setText(jsEditor.session.getValue());
+          $("#cpy-js").attr("title","Copied");
         });
 
         var jsEditor = ace.edit("js-editor");
